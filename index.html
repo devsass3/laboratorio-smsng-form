@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio-FORM</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form onsubmit="alert('Formulario Enviado');">
+        <h1>Formulario Información Alta Telefónica</h1>
+        <div class="cyan__container">
+            <h2 class="section-title">Datos Personales</h2>
+            <div>
+                <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" maxlength="32" pattern="[A-Za-z]{1,32}" title="No admitidos NÚMEROS y CARACTERES: &nbsp &nbsp / * ? &lt &gt . , : ; @ #" oninput="setCustomValidity('')" required><br>
+                <label for="lname">Apellidos:</label>
+                    <input type="text" id="lname" name="lastname" maxlength="60" pattern="[A-Za-z]{1,60}" title="No admitidos NÚMEROS y CARACTERES: &nbsp &nbsp / * ? &lt &gt . , : ; @ #" oninput="setCustomValidity('')" required><br>
+                <label for="adress">Dirección:</label>
+                    <input type="text" id="adress" name="adress" maxlength="60" title="Avenida, calle..." required><br>
+                <label for="pcode">Código Postal:</label>
+                    <input type="text" id="pcode" name="postcode" maxlength="5" min="0" max="9999" step="1" pattern="[0-9]{5}" title="Código postal" required><br>
+                <label for="city">Localidad:</label>
+                    <input type="text" id="city" name="city" maxlength="32" pattern="[A-Za-z]{1,32}" title="No admitidos NÚMEROS y CARACTERES: &nbsp &nbsp / * ? &lt &gt . , : ; @ #" oninput="setCustomValidity('')" required><br>
+            </div>
+        </div>
+        <div class="cyan__container">
+            <h2 class="section-title">Tipo de Contratación</h2>
+            <div id="contract__row">
+                <input style="cursor: pointer;" type="radio" id="newcontract" name="contract" value="newcontract" checked>
+                    <label for="newcontract">Nueva Contratación</label>
+                <input style="cursor: pointer;" type="radio" id="portability" name="contract" value="portability">
+                    <label for="portability">Portabilidad</label>
+                <input style="cursor: pointer;" type="radio" id="contractchange" name="contract" value="contractchange">
+                    <label for="contractchange">Cambio de Contrato</label>
+            </div>
+            <div>
+                <label for="company">Elija la compañía actual:</label>
+                    <select name="company" id="company">
+                        <option value="movistar">Movistar</option>
+                        <option value="orange">Orange</option>
+                        <option value="vodafone">Vodafone</option>
+                        <option value="yoigo">Yoigo</option>
+                        <option value="nocompany">No Tengo Ninguna Compañía</option>
+                    </select>
+                <label for="newcompany">En caso de portabilidad, elija la nueva compañía:</label>
+                    <select name="company" id="portcompany">
+                        <option value="movistar">Movistar</option>
+                        <option value="orange">Orange</option>
+                        <option value="vodafone">Vodafone</option>
+                        <option value="yoigo">Yoigo</option>
+                    </select>
+            </div>
+        </div>
+        <div class="cyan__container">
+            <h2 class="section-title">Datos Bancarios</h2>
+            <div>
+                <div class="data__row">
+                    <label for="country">País:</label>
+                        <input id="es" value="ES" disabled>
+                    <p>(sólo válido ES)</p>
+                </div>
+                <div class="data__row">
+                    <label for="iban">Control IBAN:</label>
+                        <input id="iban" type="text" name="iban" maxlength="2"  min="0" max="99" step="1" placeholder="XX" pattern="[0-9]{2}" autocomplete="none" autocomplete="off" required/>
+                    <p>(dos dígitos)</p>
+                </div>
+                <div class="data__row">
+                    <label for="entity">Entidad:</label>
+                        <input id="entity" type="text" name="entity" maxlength="4"  min="0" max="9999" step="1" placeholder="XXXX" pattern="[0-9]{4}" autocomplete="none" autocomplete="off" required/>
+                    <p>(cuatro dígitos)</p>
+                </div>
+                <div class="data__row">
+                    <label for="bank">Sucursal:</label>
+                        <input id="bank" type="text" name="bank" maxlength="4"  min="0" max="9999" step="1" placeholder="XXXX" pattern="[0-9]{4}" autocomplete="none" autocomplete="off" required/>
+                    <p>(cuatro dígitos)</p>
+                </div>
+                <div class="data__row">
+                    <label for="dc">DC:</label>
+                        <input id="dc" type="text" name="dc" maxlength="2"  min="0" max="99" step="1" placeholder="XX" pattern="[0-9]{2}" autocomplete="none" autocomplete="off" required/>
+                    <p>(dos dígitos)</p>
+                </div>
+                <div class="data__row">
+                    <label for="account">Cuenta:</label>
+                        <input id="account" type="text" name="account" maxlength="10"  min="0" max="9999999999" step="1" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" autocomplete="none" autocomplete="off" required/>
+                    <p>(díez dígitos)</p>
+                </div>
+            </div>
+        </div>
+        <div id="reachedBy" class="cyan__container">
+            <h2 id="data__section-title" class="section-title">Datos Estadísticos - ¿Cómo nos conoció?</h2>
+            <div id="media-way">
+                <input style="cursor: pointer;" type="checkbox" id="tv" name="media" onclick="onlyOne(this)">
+                    <label for="tv">A través de la TV</label><br>
+                <input style="cursor: pointer;" type="checkbox" id="radio" name="media" onclick="onlyOne(this)">
+                    <label for="radio">A través de la radio</label><br>
+                <input style="cursor: pointer;" type="checkbox" id="internet" name="media" onclick="onlyOne(this)">
+                    <label for="internet">A través de Internet</label><br>
+                <input style="cursor: pointer;" type="checkbox" id="other" name="media" onclick="onlyOne(this)">
+                    <label for="other">Otros</label>
+            </div>
+            <div id="stars">
+                <input id="rating" type="range" list="tickmarks" min="1" max="5" value="3">
+                    <datalist id="tickmarks">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                    </datalist>
+                <label for="nbstars">Valoración [1-5]</label>
+            </div>
+            <div id="form__date">
+                <label for="date">Fecha de la Encuesta:</label>
+                    <input id="dateSelected" type="date" value="2019-01-01">
+            </div>
+        </div>
+        <div id="data__buttons">
+            <p><input id="submit-data" type="submit" value="Enviar datos"></p>
+            <button>Borrar Datos</button>
+        </div>
+        <div id="show__buttons">
+            <button id="starsResult">Mostrar Valoración</button>
+            <button id="showAccount">Mostrar Cuenta</button>
+            <button id="showCurrentDay" >Mostrar Día Semana</button>
+        </div>
+    </form>
+<script type="text/javascript" src="/form.js"></script>
+</body>
+</html>

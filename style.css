@@ -1,0 +1,153 @@
+/* Globals */
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 150px 90px 150px;
+    font-size: 1.2rem;
+}
+
+div, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    padding: 60px 0 90px 0;
+    color: blue;
+    text-shadow: 4px 2px yellow;
+}
+
+label {
+    font-weight: 600;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    color: #c237ab;
+}
+
+#submit-data:hover {
+    color: #c237ab;
+}
+
+      /* remove selecting arrows from input type="number" */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/* Styles */
+.cyan__container {
+    background-color: cyan;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.cyan__container input {
+    background-color: yellow;
+    border: none;
+    border-top: 2px solid #b9b9b9;
+    border-radius: 5px;
+}
+.section-title {
+    position: relative;
+    width: 170px;
+    top: -27px;
+    padding: 3px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    font-weight: 100;
+}
+
+#contract__row {
+    margin-bottom: 30px;
+}
+
+#contract__row label {
+    padding-right: 30px;
+}
+
+#company {
+    margin-right: 30px;
+}
+
+.data__row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 22px;
+}
+
+#es {
+    background-color: #dddd95;
+}
+
+#reachedBy {
+    margin-bottom: 0;
+}
+
+#data__section-title {
+    width: 320px;
+}
+
+#media-way {
+    margin-bottom: 30px;
+}
+
+#stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#rating {
+    cursor: grab;
+}
+
+#stars label {
+    padding-left: 20px;
+}
+
+#form__date input{
+    background-color: white;
+    margin-left: 20px;
+    text-align: center;
+}
+
+#data__buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    height: 20px;
+}
+
+#submit-data {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+#show__buttons button{
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    background-color: pink;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 2px 2px #dddcdc;
+}
