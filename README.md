@@ -4,7 +4,7 @@ One-page form example.
 
 <p>Here are some <b>IMAGES</b>:</p>
 
-<img src = "ImagesFormLayout/form-pic.png" width = 600>
+<img src = "ImagesFormLayout/form-screenshot.png" width = 600>
 
 
 ## Usage
